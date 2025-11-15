@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula de função</title>
-    <script src="/JS/funcao.js"> </script>
+    
 </head>
 <body>
     <h1>Aula de função</h1>
     <p>Função: bloco de código que pode ser executado e reutilizado. valores podem ser passados por uma função e a mesma retonar outro valor</p>
+
+  <h2>Calcular Média</h2>
+
+    <input type="number" id="n1" placeholder="Número 1">
+    <input type="number" id="n2" placeholder="Número 2">
+    <input type="number" id="n3" placeholder="Número 3">
+
+    <button onclick="CalcularMedia()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <h2>Calcular IMC</h2>
+
+    <input type="number" id="altura" placeholder="altura" >
+    <input type="number" id="peso" placeholder="peso" >
+
+    <button onclick="imc()" >Calcular IMC</button>
+
+    <p id="imcr" ></p>
+
+    <script src="/JS/funcao.js"></script>
 </body>
 </html>
