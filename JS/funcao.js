@@ -6,13 +6,15 @@ function AreaQuadrado(lado){
 
 console.log(AreaQuadrado(4))
 
-function imc(peso, altura){
-    var imctotal = peso / (altura *altura)
-    return imctotal;
+function imc(){   
+    let peso = Number(document.getElementById("peso").value);
+    let altura = Number(document.getElementById("altura").value);
+
+    let imctotal = peso / (altura *altura)
+
+    document.getElementById("imcr").textContent = "Seu IMC é :" + imctotal;
 }
 
-console.log(imc(60, 1.70))
-console.log(imc(80, 1.90))
 
 function maiorDeIdade(nome, idade ){
     if(idade < 18){
@@ -31,3 +33,18 @@ addEventListener('click', function(){
     console.log('oie')
 }
 );
+
+
+
+function CalcularMedia(){
+    
+    let n1 = Number(document.getElementById("n1").value);
+    let n2 = Number(document.getElementById("n2").value);
+    let n3 = Number(document.getElementById("n3").value);
+
+    let media = (n1 + n2 + n3) / 3;
+    document.getElementById("resultado").textContent = "A média é : " + media;
+    
+}
+
+
