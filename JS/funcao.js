@@ -13,6 +13,8 @@ function imc(){
     let imctotal = peso / (altura *altura)
 
     document.getElementById("imcr").textContent = "Seu IMC é :" + imctotal;
+    document.getElementById("peso").value = "";
+    document.getElementById("altura").value = "";
 }
 
 
@@ -44,7 +46,60 @@ function CalcularMedia(){
 
     let media = (n1 + n2 + n3) / 3;
     document.getElementById("resultado").textContent = "A média é : " + media;
+
+      document.getElementById("n1").value = "";
+      document.getElementById("n2").value = "";
+      document.getElementById("n3").value = "";
+
     
 }
 
 
+function PerimetroQuadrado(){
+    let cm = Number(document.getElementById("cm").value);
+
+    let cmr = 4 * cm;
+
+    document.getElementById("cmr").textContent= "O perimetro do quadrado é: " + cmr;
+
+      document.getElementById("cm").value = "";
+}
+
+function NomeCompleto(){
+    var nome = document.getElementById("nome").value;
+
+    document.getElementById("nomer").textContent = "Seu Nome é: " + nome;
+    document.getElementById("nome").value = "";
+}
+
+function Par(){
+    let nu = Number(document.getElementById("numero").value);
+
+    if(nu % 2 == 0){
+        document.getElementById("parr").textContent = "O Numero " + nu + " é par ";
+    }
+    else{
+         document.getElementById("parr").textContent = "O Numero " + nu + " não é par ";
+    }
+
+      document.getElementById("numero").value = "";
+}
+
+addEventListener("scroll", function(){
+
+    this.document.getElementById("rolou").textContent = "Victor henrique"
+});
+
+
+//esse nao foi eu só usei pra testar o chat do vscode muito bom nmrl 
+function CalcularQuantidadeNumeros(){
+    let quantidade = Number(document.getElementById("quantidade").value);
+    let resultado = "";
+
+    for(let i = 1; i <= quantidade; i++){
+        resultado += i + " ";
+    }
+
+    document.getElementById("resultadoNumeros").textContent = "Números: " + resultado;
+    document.getElementById("quantidade").value = "";
+}

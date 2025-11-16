@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula de função</title>
-    
+    <style>
+      input{
+        border-radius: 10px;
+        border-color: rgb(143, 143, 255);
+      }
+      button{
+        border-radius: 10px;
+        border-color: green;
+        background-color: rgb(174, 255, 255);
+      }
+      div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+      }
+      body{
+        background-color: antiquewhite;
+      }
+    </style>
 </head>
 <body>
-    <h1>Aula de função</h1>
+ 
+  <div>
+       <h1>Aula de função</h1>
     <p>Função: bloco de código que pode ser executado e reutilizado. valores podem ser passados por uma função e a mesma retonar outro valor</p>
 
   <h2>Calcular Média</h2>
+
 
     <input type="number" id="n1" placeholder="Número 1">
     <input type="number" id="n2" placeholder="Número 2">
     <input type="number" id="n3" placeholder="Número 3">
 
     <button onclick="CalcularMedia()">Calcular</button>
+
 
     <p id="resultado"></p>
 
@@ -28,6 +52,40 @@
     <button onclick="imc()" >Calcular IMC</button>
 
     <p id="imcr" ></p>
+
+    <h2>perimetro de um quadrado</h2>
+
+    <input type="number" id="cm" placeholder="CM" >
+
+    <button onclick="PerimetroQuadrado()" >Calcular Perimetro</button>
+     <p id="cmr" ></p>
+
+    <h2>Retornar meu nome Completo</h2>
+
+    <input type="text" id="nome" placeholder="Informe seu nome" >
+    
+    <button onclick="NomeCompleto()" >Ver Meu Nome</button>
+
+    <p id="nomer" ></p>    
+
+    <h2>Verificar se o numero é par</h2>
+
+    <input type="number" id="numero" placeholder="Informe um numero pra saber se é par">
+
+    <button onclick="Par()" >Ver se é par</button>
+
+    <p id="parr" ></p>
+
+    <h2>quando rola a tela aparece meu nome</h2>
+    <p id="rolou" ></p>
+
+    <h2>Digita um numero ai rs</h2>
+
+    <input type="number" id="quantidade" placeholder="Digite a quantidade de números">
+    <button onclick="CalcularQuantidadeNumeros()">Calcular</button>
+    <p id="resultadoNumeros"></p>
+  </div>
+
 
     <script src="/JS/funcao.js"></script>
 </body>
