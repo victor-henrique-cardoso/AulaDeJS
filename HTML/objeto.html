@@ -1,19 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objeto em JS</title>
+    <title>Objetos e Métodos em JavaScript</title>
+    <link rel="stylesheet" href="/HTML/objetostilo.css">
 </head>
 <body>
-    <h1>Objeto em JavaScript</h1>
-    <p>Objeto: coleção de propriedades, onde cada propriedade é definida por um par chave/valor. Objetos podem conter outros objetos, funções e valores primitivos.</p>
-    <P>Objeto: Conjunto de variaveis e funções, que são chamada de propriedade e metodos</P>
-   
-    <p>Metodos é uma propriedade que possui uma função no local do seu valor</p>
-    <p>this fas referencia a alguma coisa </p>
-    <p>Objeto serve pra organizar o codigo em peguenas partes reutilizaveis </p>
-    
-    <script src="/JS/objeto.js" ></script>
+    <div class="container">
+        <header>
+            <h1> Objetos e Métodos em JavaScript</h1>
+            <p>Aprenda a estruturar seu código de forma profissional e reutilizável</p>
+        </header>
+
+        <main>
+            <!-- Introdução -->
+            <section>
+                <h2>O que são Objetos?</h2>
+                <p>
+                    Um <strong>objeto</strong> é uma coleção de propriedades onde cada propriedade é definida por um par <strong>chave/valor</strong>. 
+                    Em JavaScript, objetos são fundamentais para organizar e estruturar dados de forma lógica e reutilizável.
+                </p>
+                <div class="highlight">
+                    <strong>Definição:</strong> Um objeto é um conjunto de variáveis e funções. As variáveis são chamadas de <strong>propriedades</strong> 
+                    e as funções de <strong>métodos</strong>.
+                </div>
+            </section>
+
+            <!-- Criando Objetos -->
+            <section>
+                <h2>Criando Objetos</h2>
+                
+                <h3>1️⃣ Literal de Objeto (Recomendado)</h3>
+                <p>A forma mais simples e direta de criar um objeto:</p>
+                <div class="code-block">
+<code><span class="keyword">const</span> usuario = {
+  <span class="property">nome</span>: <span class="string">"João"</span>,
+  <span class="property">idade</span>: <span class="number">25</span>,
+  <span class="property">email</span>: <span class="string">"joao@email.com"</span>,
+  <span class="property">ativo</span>: <span class="keyword">true</span>
+};</code>
+                </div>
+
+                <h3>2️⃣ Construtor (Padrão de Classe)</h3>
+                <p>Usando uma função construtora:</p>
+                <div class="code-block">
+<code><span class="keyword">function</span> Usuario(nome, idade) {
+  <span class="keyword">this</span>.nome = nome;
+  <span class="keyword">this</span>.idade = idade;
+}
+
+<span class="keyword">const</span> user = <span class="keyword">new</span> Usuario(<span class="string">"Maria"</span>, <span class="number">30</span>);</code>
+                </div>
+
+                <h3>3️⃣ Class (Forma Moderna)</h3>
+                <p>Usando a sintaxe de classes (ES6+):</p>
+                <div class="code-block">
+<code><span class="keyword">class</span> Usuario {
+  <span class="keyword">constructor</span>(nome, idade) {
+    <span class="keyword">this</span>.nome = nome;
+    <span class="keyword">this</span>.idade = idade;
+  }
+}
+
+<span class="keyword">const</span> user = <span class="keyword">new</span> Usuario(<span class="string">"Pedro"</span>, <span class="number">28</span>);</code>
+                </div>
+            </section>
+
+            <!-- Propriedades -->
+            <section>
+                <h2>Propriedades</h2>
+                <p>
+                    <strong>Propriedades</strong> são valores associados a um objeto. Elas armazenam dados como strings, números, 
+                    booleanos ou até mesmo outros objetos.
+                </p>
+
+                <h3>Acessando Propriedades</h3>
+                <div class="code-block">
+<code><span class="keyword">const</span> carro = {
+  <span class="property">marca</span>: <span class="string">"Toyota"</span>,
+  <span class="property">modelo</span>: <span class="string">"Corolla"</span>,
+  <span class="property">ano</span>: <span class="number">2023</span>
+};
+
+<span class="comment">// Acesso por ponto</span>
+console.log(carro.marca); <span class="comment">// "Toyota"</span>
+
+<span class="comment">// Acesso por colchetes</span>
+console.log(carro[<span class="string">"modelo"</span>]); <span class="comment">// "Corolla"</span></code>
+                </div>
+
+                <h3>Modificando Propriedades</h3>
+                <div class="code-block">
+<code>carro.ano = <span class="number">2024</span>;
+carro[<span class="string">"marca"</span>] = <span class="string">"Honda"</span>;
+
+<span class="comment">// Adicionando nova propriedade</span>
+carro.cor = <span class="string">"Azul"</span>;</code>
+                </div>
+            </section>
+
+            <!-- Métodos -->
+            <section>
+                <h2>Métodos</h2>
+                <p>
+                    <strong>Métodos</strong> são funções que pertencem a um objeto. Eles definem comportamentos e ações 
+                    que o objeto pode realizar.
+                </p>
+                <div class="highlight">
+                    <strong>Importante:</strong> Um método é uma propriedade que contém uma função como valor!
+                </div>
+
+                <h3>Criando Métodos</h3>
+                <div class="code-block">
+<code><span class="keyword">const</span> pessoa = {
+  <span class="property">nome</span>: <span class="string">"Ana"</span>,
+  <span class="property">idade</span>: <span class="number">28</span>,
+  
+  <span class="comment">// Método: saudação</span>
+  <span class="property">saudar</span>: <span class="keyword">function</span>() {
+    console.log(<span class="string">"Olá, meu nome é "</span> + <span class="keyword">this</span>.nome);
+  },
+  
+  <span class="comment">// Sintaxe moderna (ES6)</span>
+  <span class="property">apresentar</span>() {
+    console.log(<span class="string">`Tenho ${this.idade} anos`</span>);
+  }
+};
+
+pessoa.saudar();      <span class="comment">// "Olá, meu nome é Ana"</span>
+pessoa.apresentar();  <span class="comment">// "Tenho 28 anos"</span></code>
+                </div>
+            </section>
+
+            <!-- THIS -->
+            <section>
+                <h2>A Palavra-chave THIS</h2>
+                <p>
+                    <strong>this</strong> é uma palavra-chave especial que faz referência ao próprio objeto. 
+                    Ela permite que os métodos acessem as propriedades do objeto ao qual pertencem.
+                </p>
+
+                <div class="example-box">
+                    <h4>Exemplo Prático:</h4>
+                    <div class="code-block">
+<code><span class="keyword">const</span> livro = {
+  <span class="property">titulo</span>: <span class="string">"JavaScript Moderno"</span>,
+  <span class="property">autor</span>: <span class="string">"João Silva"</span>,
+  <span class="property">paginas</span>: <span class="number">350</span>,
+  
+  <span class="property">descricao</span>() {
+    <span class="comment">// 'this' refere-se ao objeto 'livro'</span>
+    <span class="keyword">return</span> <span class="string">`${this.titulo} por ${this.autor}`</span>;
+  },
+  
+  <span class="property">info</span>() {
+    <span class="keyword">return</span> <span class="string">`Este livro tem ${this.paginas} páginas`</span>;
+  }
+};
+
+console.log(livro.descricao()); <span class="comment">// "JavaScript Moderno por João Silva"</span>
+console.log(livro.info());      <span class="comment">// "Este livro tem 350 páginas"</span></code>
+                    </div>
+                </div>
+
+                <div class="tip">
+                    Sem <code>this</code>, os métodos não conseguiriam acessar os dados específicos de cada objeto!
+                </div>
+            </section>
+
+            <!-- Por que usar Objetos -->
+            <section>
+                <h2>Por Que Usar Objetos?</h2>
+                <ul class="benefit-list">
+                    <li><strong>Organização:</strong> Agrupa dados relacionados em um único lugar</li>
+                    <li><strong>Reutilização:</strong> Código mais limpo e reutilizável em diferentes partes da aplicação</li>
+                    <li><strong>Manutenção:</strong> Alterações são mais fáceis quando o código está bem organizado</li>
+                    <li><strong>Modularidade:</strong> Divide problemas complexos em partes menores e gerenciáveis</li>
+                    <li><strong>Representação Real:</strong> Espelha conceitos do mundo real (pessoa, carro, livro, etc)</li>
+                </ul>
+            </section>
+
+            <!-- Exemplo Completo -->
+            <section>
+                <h2>Exemplo Completo Prático</h2>
+                <div class="example-box">
+                    <h4>Um objeto Conta Bancária:</h4>
+                    <div class="code-block">
+<code><span class="keyword">const</span> contaBancaria = {
+  <span class="property">titular</span>: <span class="string">"Carlos"</span>,
+  <span class="property">saldo</span>: <span class="number">1500</span>,
+  <span class="property">agencia</span>: <span class="string">"1234"</span>,
+  
+  <span class="property">depositar</span>(valor) {
+    <span class="keyword">if</span> (valor > <span class="number">0</span>) {
+      <span class="keyword">this</span>.saldo += valor;
+      console.log(<span class="string">`Depósito de R$ ${valor} realizado!`</span>);
+    }
+  },
+  
+  <span class="property">sacar</span>(valor) {
+    <span class="keyword">if</span> (valor <= <span class="keyword">this</span>.saldo) {
+      <span class="keyword">this</span>.saldo -= valor;
+      console.log(<span class="string">`Saque de R$ ${valor} realizado!`</span>);
+    } <span class="keyword">else</span> {
+      console.log(<span class="string">"Saldo insuficiente!"</span>);
+    }
+  },
+  
+  <span class="property">consultarSaldo</span>() {
+    console.log(<span class="string">`Saldo: R$ ${this.saldo}`</span>);
+  }
+};
+
+contaBancaria.depositar(<span class="number">500</span>);
+contaBancaria.sacar(<span class="number">200</span>);
+contaBancaria.consultarSaldo();</code>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resumo -->
+            <section>
+                <h2>📝 Resumo</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Conceito</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Objeto</strong></td>
+                            <td>Coleção de propriedades (chave/valor)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Propriedade</strong></td>
+                            <td>Uma variável dentro de um objeto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Método</strong></td>
+                            <td>Uma função dentro de um objeto</td>
+                        </tr>
+                        <tr>
+                            <td><strong>this</strong></td>
+                            <td>Refere-se ao próprio objeto</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>💻 Aprenda JavaScript de forma estruturada e profissional!</p>
+        </footer>
+    </div>
+
+    <script src="/JS/objeto.js"></script>
 </body>
 </html>
